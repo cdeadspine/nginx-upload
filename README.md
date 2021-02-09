@@ -5,6 +5,7 @@ as explained by https://github.com/bitnami/bitnami-docker-nginx#adding-custom-ng
     and https://www.nginx.com/resources/wiki/extending/converting/
 
 (maintainer deploys with)
+```
     docker build -t cdeadspine/nginx-upload:1.19.6-debian-10-r48 .
 #quicktest
     docker run --name nginx -P cdeadspine/nginx-upload:1.19.6-debian-10-r48
@@ -12,10 +13,12 @@ as explained by https://github.com/bitnami/bitnami-docker-nginx#adding-custom-ng
     localhost:49154
 
     docker push cdeadspine/nginx-upload:1.19.6-debian-10-r48
+```
 
 
 
 (abaondoned since setting up php backend just to rename a file is much harder than just:)
+```
 server {
     listen 127.0.0.1:4000;
     location / {
@@ -42,3 +45,4 @@ server {
       proxy_pass                 http://127.0.0.1:4000/;
     }
   }
+```  
